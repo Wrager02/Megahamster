@@ -1,0 +1,12 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+th {
+    padding: 3px 3px 6px 12px;
+}
+
+td {
+    padding: 3px 3px 3px 12px;
+}
