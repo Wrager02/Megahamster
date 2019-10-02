@@ -1,7 +1,7 @@
 <?php
 
 
-class Room {
+abstract class Room {
     private $price;
     private $name;
 
@@ -24,7 +24,7 @@ class Room {
         return $this->price;
     }
 
-    public function __toString() : string {
-        return $this->getName() . ' ' . $this->getPrice() . '$';
-    }
+
+    public abstract function calcArea() : float ;
+    public abstract function toHTML() : string ;
 }

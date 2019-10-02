@@ -6,10 +6,16 @@
 </head>
 <body>
 <?php
-require ("Classes/room.php");
-$rooms[] = new Room("The room", 49);
-$rooms[] = new Room("The flat", 149);
-$rooms[] = new Room("The pit", 69);
+
+require 'classes/Room.php';
+require 'classes/RectangularRoom.php';
+require("classes/OctagonalRoom.php");
+
+$rooms = [
+        new RectangularRoom("The room", 49, 40, 50),
+        new RectangularRoom("The flat", 149, 40, 50),
+        new OctagonalRoom("The pit", 69, 40)
+];
 
 echo <<<EOT
 <h1>Megahamster</h1>
@@ -17,16 +23,15 @@ echo <<<EOT
     <tr>
         <th>Produkt</th>
         <th>Preis</th>
+        <th>Länge</th>
+        <th>Breite</th>
+        <th>Seite</th>
+        <th>Fläche</th>
     </tr>
 EOT;
 
 foreach ($rooms as $room) {
-echo <<<EOT
-<tr>
-    <td>{$room->getName()}</td>
-    <td>{$room->getPrice()}</td>
-</tr>
-EOT;
+    echo $room->toHTML();
 }
 
 echo "</table>";
