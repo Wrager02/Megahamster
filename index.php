@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Megahamster</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 <?php
@@ -12,9 +14,9 @@ require 'classes/RectangularRoom.php';
 require("classes/OctagonalRoom.php");
 
 $rooms = [
-        new RectangularRoom("The room", 49, 40, 50),
-        new RectangularRoom("The flat", 149, 40, 50),
-        new OctagonalRoom("The pit", 69, 40)
+        new RectangularRoom("The room", 49, 80, 50),
+        new RectangularRoom("The flat", 149, 120, 80),
+        new OctagonalRoom("The pit", 69, 20)
 ];
 
 echo <<<EOT

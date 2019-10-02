@@ -29,11 +29,11 @@ class OctagonalRoom extends Room {
         return
             "<tr>" .
                 "<td>" . parent::getName() . "</td>" .
-                "<td>" . parent::getPrice() . "</td>" .
+                "<td>" . number_format(parent::getPrice(), 1) . " €</td>" .
                 "<td></td>" .
                 "<td></td>" .
-                "<td>" . $this->getSide() . "</td>" .
-                "<td>" . $this->calcArea() . "</td>" .
+                "<td>" . number_format($this->getSide(), 1) . " cm</td>" .
+                "<td>" . number_format($this->calcArea(), 1). " cm²</td>" .
             "</tr>";
     }
 }
