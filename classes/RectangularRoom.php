@@ -5,8 +5,8 @@ class RectangularRoom extends Room {
     private $length;
     private $width;
 
-    public function __construct(string $name, float $price, float $length, float $width) {
-        parent::__construct($name, $price);
+    public function __construct(string $name, float $price, float $length, float $width, array $specialEquipment) {
+        parent::__construct($name, $price, $specialEquipment);
         $this->length = $length;
         $this->width = $width;
     }
@@ -43,6 +43,7 @@ class RectangularRoom extends Room {
                 "<td>" . number_format($this->getWidth(), 1) . " cm</td>" .
                 "<td></td>" .
                 "<td>" . number_format($this->calcArea(), 1) . " cm²</td>" .
+                "<td>" . parent::specialEquipmentToString() . "</td>" .
             "</tr>";
     }
 }

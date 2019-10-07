@@ -4,8 +4,8 @@
 class OctagonalRoom extends Room {
     private $side;
 
-    public function __construct(string $name, float $price, float $side) {
-        parent::__construct($name, $price);
+    public function __construct(string $name, float $price, float $side, array $specialEquipment) {
+        parent::__construct($name, $price, $specialEquipment);
         $this->side = $side;
     }
 
@@ -33,7 +33,8 @@ class OctagonalRoom extends Room {
                 "<td></td>" .
                 "<td></td>" .
                 "<td>" . number_format($this->getSide(), 1) . " cm</td>" .
-                "<td>" . number_format($this->calcArea(), 1). " cm²</td>" .
+                "<td>" . number_format($this->calcArea(), 1) . " cm²</td>" .
+                "<td>" . parent::specialEquipmentToString() . "</td>" .
             "</tr>";
     }
 }

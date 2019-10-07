@@ -14,9 +14,9 @@ require 'classes/RectangularRoom.php';
 require("classes/OctagonalRoom.php");
 
 $rooms = [
-        new RectangularRoom("The room", 49, 80, 50),
-        new RectangularRoom("The flat", 149, 120, 80),
-        new OctagonalRoom("The pit", 69, 20)
+        new RectangularRoom("The room", 49, 80, 50, []),
+        new RectangularRoom("The flat", 149, 120, 80, ['Food jars']),
+        new OctagonalRoom("The pit", 69, 20, ['Hamster training gloves', 'Hamster punching sack'])
 ];
 
 echo <<<EOT
@@ -29,6 +29,7 @@ echo <<<EOT
         <th>Breite</th>
         <th>Seite</th>
         <th>Fläche</th>
+        <th>Zusatzausstattung</th>
     </tr>
 EOT;
 
