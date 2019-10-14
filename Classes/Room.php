@@ -1,5 +1,6 @@
 <?php
 
+namespace Wrager02\Megahamster\Classes;
 
 abstract class Room {
     private $price;

@@ -1,5 +1,6 @@
 <?php
 
+namespace Wrager02\Megahamster\Classes;
 
 class RectangularRoom extends Room {
     private $length;

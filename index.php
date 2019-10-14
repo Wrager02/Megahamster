@@ -1,3 +1,12 @@
+<?php
+use Wrager02\Megahamster\Classes\RectangularRoom as RectangularRoom;
+use Wrager02\Megahamster\Classes\OctagonalRoom as OctagonalRoom;
+
+require "Classes/Room.php";
+require "Classes/RectangularRoom.php";
+require "Classes/OctagonalRoom.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,19 +16,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-<?php
-
-require 'classes/Room.php';
-require 'classes/RectangularRoom.php';
-require("classes/OctagonalRoom.php");
-
-$rooms = [
-        new RectangularRoom("The room", 49, 80, 50, []),
-        new RectangularRoom("The flat", 149, 120, 80, ['Food jars']),
-        new OctagonalRoom("The pit", 69, 20, ['Hamster training gloves', 'Hamster punching sack'])
-];
-
-echo <<<EOT
 <h1>Megahamster</h1>
 <table>
     <tr>
@@ -31,13 +27,17 @@ echo <<<EOT
         <th>Fläche</th>
         <th>Zusatzausstattung</th>
     </tr>
-EOT;
+    <?php
+    $rooms = [
+        new RectangularRoom("The room", 49, 80, 50, []),
+        new RectangularRoom("The flat", 149, 120, 80, ['Food jars']),
+        new OctagonalRoom("The pit", 69, 20, ['Hamster training gloves', 'Hamster punching sack'])
+    ];
 
-foreach ($rooms as $room) {
-    echo $room->toHTML();
-}
-
-echo "</table>";
-?>
+    foreach ($rooms as $room) {
+        echo $room->toHTML();
+    }
+    ?>
+</table>
 </body>
 </html>
