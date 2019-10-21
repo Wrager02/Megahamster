@@ -1,6 +1,6 @@
 <?php
 
-namespace Wrager02\Megahamster\Classes;
+namespace Wrager02\Megahamster;
 
 class OctagonalRoom extends Room {
     private $side;

@@ -1,10 +1,8 @@
 <?php
-use Wrager02\Megahamster\Classes\RectangularRoom as RectangularRoom;
-use Wrager02\Megahamster\Classes\OctagonalRoom as OctagonalRoom;
+require "vendor/autoload.php";
 
-require "Classes/Room.php";
-require "Classes/RectangularRoom.php";
-require "Classes/OctagonalRoom.php";
+use Wrager02\Megahamster\RectangularRoom as RectangularRoom;
+use Wrager02\Megahamster\OctagonalRoom as OctagonalRoom;
 ?>
 
 <!DOCTYPE html>
